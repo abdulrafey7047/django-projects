@@ -1,0 +1,33 @@
+{% extends "playlist/base.html" %}
+
+{% load static %}
+
+{% block css %} <link rel="stylesheet" href= "{% static 'playlist/css/home.css' %}"/> {% endblock %}
+
+{% block title %} Home Page {% endblock %}
+
+{% block heading %}
+<center>Zing It</center>
+{% endblock %}
+
+{% block content%}
+
+  <div class="box">
+    {% for playlist in my_playlists %}
+        <div class="card">
+          <a href="{% url 'playlist' playlist.id  %}">
+            <div class="imgBx">
+                <img src="{% static 'playlist/images/music.jpg' %}" alt="images">
+            </div>
+            <div class="details">
+                <h2>{{playlist.name}}
+                <br>
+                <span>{{playlist.number_of_songs}}</span>
+              </h2>
+            </div>
+          </a>
+        </div>
+    {% endfor%}
+  </div>
+
+{% endblock %}

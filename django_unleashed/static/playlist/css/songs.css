@@ -1,0 +1,19 @@
+#title {
+    padding: 10px;
+    color: #464646;
+  }
+  body {
+    background: #64c19e;
+  }
+  table {
+    width: 100%;
+    text-align: center;
+  }
+  th, td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  h1{
+    color: black;
+  }

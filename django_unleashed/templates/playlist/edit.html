@@ -1,0 +1,27 @@
+{% extends "playlist/base.html" %}
+
+{% load static %}
+
+{% block css %} <link rel="stylesheet" href= "{% static 'playlist/css/songs.css' %}"/> {% endblock %} 
+    
+{% block title %} Signup {% endblock %}
+
+{% block heading %}
+<center>Edit</center>
+{% endblock %}
+
+{% block content%}
+
+    <form method="POST">
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+      
+        <input type="submit" name="btn" value="Edit">
+   </form>
+   <br>
+   <b><span>{{status}}</span></b>
+
+
+{% endblock %}

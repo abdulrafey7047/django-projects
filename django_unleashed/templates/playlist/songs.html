@@ -1,0 +1,35 @@
+{% extends "playlist/base.html" %}
+
+{% load static %}
+
+{% block css %} <link rel="stylesheet" href= "{% static 'playlist/css/songs.css' %}"/> {% endblock %} 
+    
+{% block title %} Songs Page {% endblock %}
+
+{% block heading %}
+  <center>{{ playlist_name }}</center>
+{% endblock heading %}
+
+{% block content%}
+    <table>
+        <tr>
+          <th>No.</th>
+          <th>Track</th>
+          <th>Artist</th>
+          <th>Album</th>
+          <th>Length</th>
+        </tr>
+        {% for song in songs  %}
+        <a href="{% url 'edit' song.id  %}">
+          <tr>
+              <td>{{ forloop.counter }}</td>             
+              <td><a href="{% url 'edit' song.id  %}">{{ song.track }}</a></td>
+              <td>{{ song.artist }}</td>
+              <td>{{ song.album }}</td>
+              <td>{{ song.length }}</td>
+          </tr>
+        </a>
+        {% endfor %}
+      </table>
+
+{% endblock %}
