@@ -1,0 +1,14 @@
+{% extends 'appointment_management_system/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+    <form method="POST">
+        {% csrf_token %}
+        <h2>Are you sure you want to delete appointment with {{ object.doctor }} on {{ object.date }} at {{ object.time_slot.start_time }}</h2>
+        <button type="submit" class="btn btn-danger">Confirm Cancel Appointment</button>
+        <a class="btn btn-primary" href="{% url 'management-system-appointment-detail' pk=object.pk %}">Return</a>
+    </form>
+
+{% endblock content %}
+

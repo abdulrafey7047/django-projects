@@ -26,11 +26,11 @@ from .forms import (
 
 
 class AboutView(TemplateView):
-    template_name = 'management_system/about.html'
+    template_name = 'appointment_management_system/about.html'
 
 
 class RegisterView(CreateView):
-    template_name = 'management_system/user_form.html'
+    template_name = 'appointment_management_system/user_form.html'
     model = User
     form_class = UserRegisterForm
     success_url = reverse_lazy('management-system-login')
@@ -39,7 +39,7 @@ class RegisterView(CreateView):
 class ProfileView(LoginRequiredMixin, ListView):
     model = Appointment
     context_object_name = 'appointments'
-    template_name = 'management_system/profile.html'
+    template_name = 'appointment_management_system/profile.html'
     ordering = 'date'
     paginate_by = 5
 
@@ -66,7 +66,7 @@ class ProfileView(LoginRequiredMixin, ListView):
 class UserTypeView(LoginRequiredMixin, CreateView):
     model = User
     form_class = UserTypeForm
-    template_name = 'management_system/update_account_type.html'
+    template_name = 'appointment_management_system/update_account_type.html'
 
     def get(self, request, *args, **kwargs):
         form = self.form_class(request.POST)
@@ -76,7 +76,6 @@ class UserTypeView(LoginRequiredMixin, CreateView):
         return render(request, self.template_name, context)
 
     def post(self, request, *args, **kwargs):
-        print('IN POST')
         form = self.form_class(request.POST)
         if form.is_valid():
             form.save(request)
@@ -96,7 +95,7 @@ class PatientFeelingView(LoginRequiredMixin, UpdateView):
 
 
 class ProfileUpdateView(LoginRequiredMixin, UpdateView):
-    template_name = 'management_system/update_profile.html'
+    template_name = 'appointment_management_system/update_profile.html'
 
     def get(self, request, *args, **kwargs):
         user_update_form = UserUpdateForm(instance=request.user)
@@ -134,7 +133,7 @@ class AppointmentCreateView(LoginRequiredMixin, CreateView):
     model = Appointment
     form_class = AppointmentCreateForm
     success_url = reverse_lazy('management-system-profile')
-    template_name = 'management_system/appointment_form.html'
+    template_name = 'appointment_management_system/appointment_form.html'
 
     def get(self, request):
         form = self.form_class()
@@ -157,15 +156,16 @@ class AppointmentCreateView(LoginRequiredMixin, CreateView):
 
 @method_decorator(csrf_exempt, name='dispatch')
 class AppointmentAvailableView(LoginRequiredMixin, TemplateView):
-    template_name = 'management_system/appointment_available.html'
+    template_name = 'appointment_management_system/appointment_available.html'
 
     def post(self, request):
         doctor_id = request.POST.get('doctor_id')
         date = request.POST.get('date')
         available_time_slots = get_available_time_slots_for_doctor(
             doctor_id, date)
-        json = JsonResponse(available_time_slots)
-        return json
+        available_time_slots_json = JsonResponse(available_time_slots)
+        print(available_time_slots)
+        return available_time_slots_json
 
 
 class DoctorListView(LoginRequiredMixin, ListView):

@@ -1,0 +1,13 @@
+{% extends 'appointment_management_system/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<h1>You have been logged out</h1>
+
+    <span>
+        <a href="{% url 'management-system-login' %}">Login again?</a>
+    </span>
+
+{% endblock content %}
+

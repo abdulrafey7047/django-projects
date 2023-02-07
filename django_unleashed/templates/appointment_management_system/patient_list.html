@@ -1,0 +1,54 @@
+{% extends 'appointment_management_system/base.html' %}
+
+{% block content %}
+
+   {% if patients %}
+
+   <h1 class="text-center m-4">My Patients</h1>
+      {% for patient in patients %}
+         <div class="card">
+            <div class="card-body">
+               <legend class="card-title"><a class="link-text" href="{% url 'management-system-patient-detail' pk=patient.user.pk %}">{{ patient }}</a></legend>
+               <h5>Contact Information: {{ patient.user.email }}</h5>
+               {% if   patient.feeling %}
+                  <p class="card-text">They are feeling: {{ patient.feeling }} (Updated on {{ patient.feeling_updated_datetime }}) </p>
+               {% elif patient.feeling_updated_datetime %}
+                  <p class="card-text">The patient has removed his feeling since {{ patient.feeling_updated_datetime }}
+               {% else %}
+                  <p class="card-text">The patient Hasn't updated what he is feeling</p>
+               {% endif %}
+         </div>
+      </div>
+      <br><br>
+      {% endfor %}
+
+      <!--Pagination-->
+      {% if is_paginated %}
+         {% if page_obj.has_previous %}
+            <a class="btn btn-outline-dark" href="?page=1">First</a>
+            <a class="btn btn-outline-dark" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+         {% endif %}
+
+         {% for num in page_obj.paginator.page_range %}
+            {% if page_obj.number == num %}
+               <a class="btn btn-dark" href="?page={{ num }}">{{ num }}</a>
+            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+               <a class="btn btn-outline-dark" href="?page={{ num }}">{{ num }}</a>
+            {% endif %}
+         {% endfor %}
+
+         {% if page_obj.has_next %}
+            <a class="btn btn-outline-dark" href="?page={{ page_obj.next_page_number }}">Next</a>
+            <a class="btn btn-outline-dark" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+         {% endif %}
+      {% endif %}
+      <!--END Pagination-->
+
+   {% else %}
+      <h1>You have no Patients Currently</h1>
+   {% endif %}
+
+   
+
+{% endblock %}
+

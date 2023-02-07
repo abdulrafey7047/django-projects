@@ -1,0 +1,17 @@
+{% extends 'appointment_management_system/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+    {% if user.doctor  %}
+    <h1>Appointment with {{ appointment.patient }}</h1>
+    {% elif user.patient %}
+        <h1>Appointment with Dr. {{ appointment.doctor }}</h1>
+    {% endif %}
+    <legend>Date: {{ appointment.date }}</legend>
+    <legend>Timing: {{ appointment.time_slot.start_time }} to {{ appointment.time_slot.end_time }}</legend>
+    
+    <a class="btn btn-danger" href="{% url 'management-system-appointment-delete' pk=appointment.pk %}">Cancel Appointment</a>
+
+{% endblock content %}
+

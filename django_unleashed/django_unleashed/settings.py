@@ -1,6 +1,11 @@
 # flake8: noqa
 import os
+
+from dotenv import load_dotenv 
 from pathlib import Path
+
+# Loading Environment Variables
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,8 +33,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'playlist',
-    'custom_admin',
+    'crispy_forms',
     'appointment_management_system',
+    'custom_admin',
 ]
 
 MIDDLEWARE = [
@@ -70,9 +76,17 @@ WSGI_APPLICATION = 'django_unleashed.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'django_unleashed', 
+        'USER': 'postgres', 
+        'PASSWORD': 'Cforcat.001',
+        'HOST': '127.0.0.1', 
+        'PORT': '5432',
     }
 }
 
@@ -111,13 +125,39 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-    '/var/www/static/',
-]
+PROJECT_FOLDER = os.path.abspath(os.path.dirname(__file__))
+STATIC_ROOT = os.path.join(PROJECT_FOLDER, "static")                                  
+STATIC_URL = '/static/'
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"), )              
+
+STATICFILES_FINDERS = (                                                         
+    'django.contrib.staticfiles.finders.FileSystemFinder',                      
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',                  
+) 
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+TIME_ZONE = 'Asia/Karachi'
+
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
+LOGIN_URL = 'management-system-login'
+LOGIN_REDIRECT_URL = 'management-system-profile'
+
+
+# LOGOUT_REDIRECT_URL = 'management-system-login'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = os.environ.get('EMAIL_HOST')
+EMAIL_PORT = int(os.environ.get('EMAIL_PORT'))
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')

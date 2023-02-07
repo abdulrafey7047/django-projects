@@ -1,0 +1,90 @@
+{% extends 'appointment_management_system/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="row mt-3">
+        <div class="col-2"></div>
+        <div class="col-8">
+
+            <h1 class="text-center">Schedule Appointment</h1>
+            <form method="POST">
+                {% csrf_token %}
+
+                {% if form.non_field_errors %}
+                    <div class="alert alert-danger">
+                        {{ form.non_field_errors }}
+                    </div>
+                {% endif %}
+                
+                {{ form.source.errors }}
+                {{ form.source }}
+                
+                <div class="form-group m-3">
+                    {{ form.doctor_user_id.label_tag }}
+                    {{ form.doctor_user_id }}
+                    <small  class="form-text text-danger">
+                        {{ form.doctor_user_id.errors }}
+                    </small>
+                    <small  class="form-text text-muted">
+                        {{ form.doctor_user_id.help_text }}
+                    </small>
+                </div>
+                
+                <div class="form-group m-3">
+                    {{ form.date.label_tag }}
+                    {{ form.date }}
+                    <small  class="form-text text-danger">
+                        {{ form.date.errors }}
+                    </small>
+                    <small  class="form-text text-muted">
+                        {{ form.date.help_text }}
+                    </small>
+                </div>
+
+                <div class="form-group m-3">
+                    {{ form.time_slot_id.label_tag }}
+                    {{ form.time_slot_id }}
+                    <small  class="form-text text-danger">
+                        {{ form.time_slot_id.errors }}
+                    </small>
+                    <small  class="form-text text-muted">
+                        {{ form.time_slot_id.help_text }}
+                    </small>
+                </div>
+        
+                <br>
+                
+                <div class="text-center m-3">
+                    <button type="submit" class="btn btn-outline-dark">Schedule</button><br><br>
+                </div>
+            </form>
+            
+        </div>
+        <div class="col-2"></div>
+    </div>
+    
+{% endblock content %}
+
+{% block script %}
+
+    <script src="{% static 'appointment_management_system/js/available_appointments.js' %}"></script>
+    <script>
+        const csrf_token =  "{{ csrf_token }}"
+        const available_time_slots_url = "{% url 'management-system-appointment-available' %}"
+
+        $("#id_doctor_user_id").on("change", function(){
+            const doctor_id = $("#id_doctor_user_id").val()
+            const date = $('#id_date').val()
+            update_time_slots(csrf_token, doctor_id, date, available_time_slots_url)
+        })
+
+        $('#id_date').on('change', function(){
+            const doctor_id = $("#id_doctor_user_id").val()
+            const date = $('#id_date').val()
+            update_time_slots(csrf_token, doctor_id, date, available_time_slots_url)
+        })
+    </script>
+
+{% endblock script %}
+

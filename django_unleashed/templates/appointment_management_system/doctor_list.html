@@ -1,0 +1,60 @@
+{% extends 'appointment_management_system/base.html' %}
+
+{% block content %}
+
+   <h1 class="text-center m-3">Doctors</h1>
+    {% for doctor in doctors %}
+    <div class="card">
+
+      <div class="card-header">
+         Specialization: 
+         {% if doctor.speciality %} 
+            {{ doctor.speciality }}
+         {% else %}
+            Not Updated
+         {% endif %}
+      </div>
+
+      <div class="card-body">
+         <h5 class="card-title">{{ doctor }}</h5>
+            {% if doctor.study %}
+               <p class="card-text">{{ doctor.study }}</p>
+            {% endif %}
+
+            {% if doctor.user.email %}
+               <p>Contact: {{ doctor.user.email }}</p>
+            {% endif %}
+            {% if doctor.num_patients %}
+               <p>Dr. {{ doctor }} has tended to {{  doctor.num_patients }} patient(s) in our hospital</p>
+            {% endif %}
+
+            <a href="{% url 'management-system-schedule-appointment'%}?doctor_user_id={{doctor.user.id }}">Schedule an Appointment</a>
+        </div>
+    </div>
+    <br><br>
+    {% endfor %}
+
+    {% if is_paginated %}
+
+      {% if page_obj.has_previous %}
+         <a class="btn btn-outline-dark" href="?page=1">First</a>
+         <a class="btn btn-outline-dark" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+      {% endif %}
+
+      {% for num in page_obj.paginator.page_range %}
+         {% if page_obj.number == num %}
+            <a class="btn btn-dark" href="?page={{ num }}">{{ num }}</a>
+         {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+            <a class="btn btn-outline-dark" href="?page={{ num }}">{{ num }}</a>
+         {% endif %}
+      {% endfor %}
+
+      {% if page_obj.has_next %}
+         <a class="btn btn-outline-dark" href="?page={{ page_obj.next_page_number }}">Next</a>
+         <a class="btn btn-outline-dark" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+      {% endif %}
+
+   {% endif %}
+
+{% endblock %}
+

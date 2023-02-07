@@ -1,0 +1,44 @@
+{% extends 'appointment_management_system/base.html' %}
+
+{% block content %}
+
+<div class="row mt-3">
+    <div class="col-2"></div>
+    <div class="col-8">
+
+        <h1 class="text-center">How are you Feeling Today?</h1>
+        <form method="POST">
+            {% csrf_token %}
+
+            {% if form.non_field_errors %}
+                <div class="alert alert-danger">
+                    {{ form.non_field_errors }}
+                </div>
+            {% endif %}
+            
+            {{ form.source.errors }}
+            {{ form.source }}
+            
+            <div class="form-group m-3">
+                {{ form.feeling }}
+                <small  class="form-text text-danger">
+                    {{ form.feeling.errors }}
+                </small>
+                <small  class="form-text text-muted">
+                    {{ form.feeling.help_text }}
+                </small>
+            </div>
+            
+            <br>
+            
+            <div class="text-center">
+                <button type="submit" class="btn btn-outline-dark">Update Feeling</button><br><br>
+            </div>
+        </form>
+        
+    </div>
+    <div class="col-2"></div>
+</div>
+
+{% endblock content %}
+

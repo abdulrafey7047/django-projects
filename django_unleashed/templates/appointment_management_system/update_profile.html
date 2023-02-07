@@ -1,0 +1,112 @@
+{% extends 'appointment_management_system/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="row mt-3">
+    <div class="col-2"></div>
+    <div class="col-8">
+
+        <h1 class="text-center">Update Your Information</h1>
+        <form method="POST">
+            {% csrf_token %}
+
+            {% if user_update_form.non_field_errors %}
+                <div class="alert alert-danger">
+                    {{ user_update_form.non_field_errors }}
+                </div>
+            {% endif %}
+
+            {% if data_update_form.non_field_errors %}
+                <div class="alert alert-danger">
+                    {{ data_update_form.non_field_errors }}
+                </div>
+            {% endif %}
+            
+            {{ user_update_form.source.errors }}
+            {{ user_update_form.source }}
+            
+            {{ data_update_form.source.errors }}
+            {{ data_update_form.source }}
+            
+            <div class="form-group m-3">
+                {{ user_update_form.username.label_tag }}
+                {{ user_update_form.username }}
+                <small  class="form-text text-danger">
+                    {{ user_update_form.username.errors }}
+                </small>
+                <small  class="form-text text-muted">
+                    {{ user_update_form.username.help_text }}
+                </small>
+            </div>
+            
+            <div class="form-group m-3">
+                {{ user_update_form.email.label_tag }}
+                {{ user_update_form.email }}
+                <small  class="form-text text-danger">
+                    {{ user_update_form.email.errors }}
+                </small>
+                <small  class="form-text text-muted">
+                    {{ user_update_form.email.help_text }}
+                </small>
+            </div>
+
+            <div class="form-group m-3">
+                {{ data_update_form.firstname.label_tag }}
+                {{ data_update_form.firstname }}
+                <small  class="form-text text-danger">
+                    {{ data_update_form.firstname.errors }}
+                </small>
+                <small  class="form-text text-muted">
+                    {{ data_update_form.firstname.help_text }}
+                </small>
+            </div>
+
+            <div class="form-group m-3">
+                {{ data_update_form.lastname.label_tag }}
+                {{ data_update_form.lastname }}
+                <small  class="form-text text-danger">
+                    {{ data_update_form.lastname.errors }}
+                </small>
+                <small  class="form-text text-muted">
+                    {{ data_update_form.lastname.help_text }}
+                </small>
+            </div>
+
+            {% if user.doctor %}
+            <div class="form-group m-3">
+                {{ data_update_form.speciality.label_tag }}
+                {{ data_update_form.speciality }}
+                <small  class="form-text text-danger">
+                    {{ data_update_form.speciality.errors }}
+                </small>
+                <small  class="form-text text-muted">
+                    {{ data_update_form.speciality.help_text }}
+                </small>
+            </div>
+
+            <div class="form-group m-3">
+                {{ data_update_form.study.label_tag }}
+                {{ data_update_form.study }}
+                <small  class="form-text text-danger">
+                    {{ data_update_form.study.errors }}
+                </small>
+                <small  class="form-text text-muted">
+                    {{ data_update_form.study.help_text }}
+                </small>
+            </div>
+            {% endif %}
+    
+            <br>
+            
+            <div class="text-center m-3">
+                <button type="submit" class="btn btn-outline-dark">Update</button>
+            </div>
+        </form>
+        
+    </div>
+    <div class="col-2"></div>
+</div>
+
+{% endblock content %}
+

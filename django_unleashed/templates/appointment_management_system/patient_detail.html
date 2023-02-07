@@ -1,0 +1,27 @@
+{% extends 'appointment_management_system/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+    <h1 class="mt-3">{{ patient }}</h1>
+    {% if patient.feeling %}
+        <legend>They are feeling: {{ patient.feeling }} <small>(Updated on {{ patient.feeling_updated_datetime }})</small></legend>
+    {% endif %}
+    <span>Contact: {{ patient.user.email }}</span>
+    <br>
+
+    <div class="mt-5">
+        {% if previous_appointments %}
+            <h3>Previous Appointments with you</h3>
+            <ul class="mt-4">
+            {% for appointment in previous_appointments %}
+                <li class="m-2">Appointment on {{ appointment.date }} at {{ appointment.time_slot.start_time }}</li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <legend>No Previous Appointments</legend>
+        {% endif %}
+    </div>
+   
+{% endblock content %}
+

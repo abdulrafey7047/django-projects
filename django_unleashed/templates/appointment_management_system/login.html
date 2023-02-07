@@ -1,0 +1,63 @@
+{% extends 'appointment_management_system/base.html' %}
+
+{% block content %}
+
+    <div class="row mt-3">
+        <div class="col-2"></div>
+        <div class="col-8">
+
+            <h1 class="text-center">Login</h1>
+            <form method="POST">
+                {% csrf_token %}
+
+                {% if form.non_field_errors %}
+                    <div class="alert alert-danger">
+                        {{ form.non_field_errors }}
+                    </div>
+                {% endif %}
+                
+                {{ form.source.errors }}
+                {{ form.source }}
+                
+                <div class="form-group m-3">
+                    {{ form.username.label_tag }}
+                    {{ form.username }}
+                    <small  class="form-text text-danger">
+                        {{ form.username.errors }}
+                    </small>
+                    <small  class="form-text text-muted">
+                        {{ form.username.help_text }}
+                    </small>
+                </div>
+                
+                <div class="form-group m-3">
+                    {{ form.password.label_tag }}
+                    {{ form.password }}
+                    <small  class="form-text text-danger">
+                        {{ form.password.errors }}
+                    </small>
+                    <small  class="form-text text-muted">
+                        {{ form.password.help_text }}
+                    </small>
+                </div>
+        
+                <br>
+                
+                <div class="text-center m-3">
+                    <button type="submit" class="btn btn-outline-dark">Login</button><br><br>
+                    <small  class="form-text text-muted">
+                        Don't have an account? <a href="{% url 'management-system-register' %}">Sign Up</a>
+                    </small>
+                    <br>
+                    <small  class="form-text text-muted">
+                        <a href="{% url 'password-reset' %}">ForgotPassword?</a>
+                    </small>
+                </div>
+            </form>
+            
+        </div>
+        <div class="col-2"></div>
+    </div>
+
+{% endblock content %}
+

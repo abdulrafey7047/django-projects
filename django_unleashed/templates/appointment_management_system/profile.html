@@ -1,0 +1,82 @@
+{% extends 'appointment_management_system/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+   <div class="row">
+
+      <div class="col-6 mt-3">
+         {% if user.doctor %}
+            <h1>Welcome Dr. {{ user.doctor }}</h1>
+            <legend>Specialization: {{ user.doctor.speciality }}</legend>
+            <br><br>
+            
+            <div class="mt-5">
+               <h3>What would you like to do:</h3>
+               <legend><a href="{% url 'management-system-update_profile' %}">Update Profile</a></legend>
+               <legend><a href="{% url 'management-system-patients' %}">View My Patients</a></legend>
+            </div>
+         {% elif user.patient %}
+            <h1>Welcome {{ user.patient }}</h1>
+            {% if user.patient.feeling %}
+               <h3>Feeling: {{ user.patient.feeling }}</h3>
+            {% endif %}
+            <span><a href="{% url 'management-system-patient-feeling' pk=user.patient.pk %}">How are you feeling today?</a></span>
+            <br><br>
+
+            <div class="mt-5">
+               <h3>What would you like to do:</h3>
+               <legend><a href="{% url 'management-system-update_profile' %}">Update Profile</a></legend>
+               <legend><a href="{% url 'management-system-doctors' %}">Check out all Doctors</a></legend>
+               <legend><a href="{% url 'management-system-schedule-appointment' %}">Schedule an Appointment</a></legend>
+            </div>   
+         {% endif %}
+      </div>
+
+      <div class="col-6 mt-3">
+         {% if appointments %}
+            <h2>Upcomming Appointments</h2>
+            <ul class="mt-4">
+               {% for appointment in appointments %}
+                  <li class="m-2">
+                     <a class="link-text" href="{% url 'management-system-appointment-detail' pk=appointment.id %}">Appointment with 
+                        {% if user.doctor %}
+                           {{ appointment.patient }} 
+                        {% elif user.patient %}
+                           {{ appointment.doctor }} 
+                        {% endif %}
+                        on {{ appointment.date }} - {{ appointment.time_slot.start_time }}
+                     </a>
+                  </li>
+               {% endfor %}
+            </ul>
+
+            {% if is_paginated %}
+
+               {% if page_obj.has_previous %}
+                  <a class="btn btn-outline-dark" href="?page=1">First</a>
+                  <a class="btn btn-outline-dark" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+               {% endif %}
+
+               {% for num in page_obj.paginator.page_range %}
+                  {% if page_obj.number == num %}
+                     <a class="btn btn-dark" href="?page={{ num }}">{{ num }}</a>
+                  {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                     <a class="btn btn-outline-dark" href="?page={{ num }}">{{ num }}</a>
+                  {% endif %}
+               {% endfor %}
+
+               {% if page_obj.has_next %}
+                  <a class="btn btn-outline-dark" href="?page={{ page_obj.next_page_number }}">Next</a>
+                  <a class="btn btn-outline-dark" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+               {% endif %}
+
+            {% endif %}
+            
+         {% else %}
+            <h2>You have no Upcoming Appointments!</h2>
+         {% endif %}
+      </div>
+   </div>
+
+{% endblock content %}
+

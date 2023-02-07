@@ -1,0 +1,87 @@
+{% extends 'appointment_management_system/base.html' %}
+
+{% block content %}
+
+    <div class="row mt-3">
+        <div class="col-2"></div>
+        <div class="col-8">
+
+            <h1 class="text-center">Register</h1>
+            <form method="POST">
+                {% csrf_token %}
+
+                {% if form.non_field_errors %}
+                    <div class="alert alert-danger">
+                        {{ form.non_field_errors }}
+                    </div>
+                {% endif %}
+                
+                {{ form.source.errors }}
+                {{ form.source }}
+                
+                <div class="form-group m-3">
+                    {{ form.username.label_tag }}
+                    {{ form.username }}
+                    <small  class="form-text text-danger">
+                        {{ form.username.errors }}
+                    </small>
+                    <small  class="form-text text-muted">
+                        {{ form.username.help_text }}
+                    </small> 
+                </div>
+                
+                <div class="form-group m-3">
+                    {{ form.email.label_tag }}
+                    {{ form.email }}
+                    <small  class="form-text text-danger">
+                        {{ form.email.errors }}
+                    </small>
+                    <small  class="form-text text-muted">
+                        {{ form.email.help_text }}
+                    </small>
+                </div>
+
+                <div class="form-group m-3">
+                    {{ form.password1.label_tag }}
+                    {{ form.password1 }}
+                    <small  class="form-text text-danger">
+                        {{ form.password1.errors }}
+                    </small>
+                    <small  class="form-text text-muted">
+                        {{ form.password1.help_text }}
+                    </small>
+                </div>
+
+                <div class="form-group m-3">
+                    {{ form.password2.label_tag }}
+                    {{ form.password2 }}
+                    <small  class="form-text text-danger">
+                        {{ form.password2.errors }}
+                    </small>
+                    <small  class="form-text text-muted">
+                        {{ form.password2.help_text }}
+                    </small>
+                </div>
+
+                <div class="form-group m-3">
+                    {{ form.register_as.label_tag }}
+                    {{ form.register_as }}
+                    <small  class="form-text text-muted">
+                        {{ form.register_as.help_text }}
+                    </small>
+                </div>
+                
+                <div class="text-center m-3">
+                    <button type="submit" class="btn btn-outline-dark">Register</button><br><br>
+                    <small id="emailHelp" class="form-text text-muted">
+                        Already have an account? <a href="{% url 'management-system-login' %}">Sign In</a>
+                    </small>
+                </div>
+            </form>
+            
+        </div>
+        <div class="col-2"></div>
+    </div>
+
+{% endblock content %}
+
