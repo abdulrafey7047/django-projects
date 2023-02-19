@@ -13,3 +13,4 @@ python-dotenv==0.21.1
 PyYAML==6.0
 sqlparse==0.4.3
 virtualenv==20.17.1
+gunicorn==20.1.0
