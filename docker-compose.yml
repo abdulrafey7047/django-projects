@@ -1,12 +1,45 @@
 version: '3.8'
 
 services:
-  django:
-    build: ./app
-    command: python manage.py runserver 0.0.0.0:8000
+
+  postgres_db:
+    image: postgres:13.0-alpine
+    ports:
+      - '5432:5432'
     volumes:
-      - ./app/:/usr/src/app/
+      - postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - ./.env
+    networks:
+      - db-net
+
+
+  django:
+    build:
+      context: ./django_unleashed
+      dockerfile: Dockerfile
+
+    command: sh -c "python django_unleashed/manage.py migrate && python django_unleashed/manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - ./:/usr/src/app
     ports:
       - 8000:8000
     env_file:
       - ./.env
+    environment:
+      - POSTGRES_HOST=postgres_db
+    depends_on:
+      - postgres_db
+    networks:
+      - db-net
+
+
+volumes:
+  postgres_data:
+
+
+networks:
+  db-net:
+    driver: bridge
+
+

@@ -81,12 +81,12 @@ DATABASES = {
     #     'NAME': BASE_DIR / 'db.sqlite3',
     # }
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'django_unleashed', 
-        'USER': 'postgres', 
-        'PASSWORD': 'Cforcat.001',
-        'HOST': '127.0.0.1', 
-        'PORT': '5432',
+        'ENGINE': os.environ.get('POSTGRES_ENGINE'),
+        'NAME': os.environ.get('POSTGRES_NAME'),
+        'USER': os.environ.get('POSTGRES_USER'),
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
+        'HOST': os.environ.get('POSTGRES_HOST'),
+        'PORT': os.environ.get('POSTGRES_PORT'),
     }
 }
 
@@ -155,7 +155,7 @@ LOGIN_REDIRECT_URL = 'management-system-profile'
 
 # LOGOUT_REDIRECT_URL = 'management-system-login'
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = os.environ.get('DJANGO_EMAIL_BACKEND')
 EMAIL_HOST = os.environ.get('DJANGO_EMAIL_HOST')
 EMAIL_PORT = int(os.environ.get('DJANGO_EMAIL_PORT'))
 EMAIL_USE_TLS = True
