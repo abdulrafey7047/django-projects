@@ -30,7 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'playlist',
     'crispy_forms',
-    'appointment_management_system',
+    # 'appointment_management_system',
     'custom_admin',
 ]
 
@@ -119,12 +119,16 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 PROJECT_FOLDER = os.path.abspath(os.path.dirname(__file__))
-STATIC_ROOT = os.path.join(PROJECT_FOLDER, "static")                                  
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"), )              
+STATIC_ROOT = os.path.join(PROJECT_FOLDER, "static")                                  
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"), )  
+
+
+# STATIC_URL = "/static/"
+# STATIC_ROOT = BASE_DIR / "staticfiles"
+
 
 STATICFILES_FINDERS = (                                                         
     'django.contrib.staticfiles.finders.FileSystemFinder',                      

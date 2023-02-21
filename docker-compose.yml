@@ -17,11 +17,14 @@ services:
   django:
     build:
       context: ./django_unleashed
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile.prod
     command: sh -c "python manage.py migrate && \
-                    gunicorn django_unleashed.wsgi --bind 0.0.0.0:8000 "
-    ports:
-      - 8000:8000
+                    python manage.py collectstatic --no-input --clear && \
+                    gunicorn django_unleashed.wsgi --bind 0.0.0.0:8000"
+    volumes:
+      - static_volume:/home/app/django_unleashed/static
+    expose:
+      - 8000
     env_file:
       - ./.env
     environment:
@@ -30,10 +33,24 @@ services:
       - postgres_db
     networks:
       - db-net
+  
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    volumes:
+      - static_volume:/home/app/django_unleashed/static
+    ports:
+      - 80:80
+    depends_on:
+    - django
+    networks:
+      - db-net
 
 
 volumes:
   postgres_data:
+  static_volume:
 
 
 networks:
