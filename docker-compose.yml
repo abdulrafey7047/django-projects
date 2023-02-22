@@ -1,0 +1,63 @@
+version: '3.8'
+
+
+services:
+
+  postgres_db:
+    image: postgres:13.0-alpine
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - ./.env
+    networks:
+      - db-net
+
+  django:
+    build:
+      context: ./django_unleashed
+      dockerfile: Dockerfile.prod
+    command: sh -c "python manage.py migrate && \
+                    python manage.py collectstatic --no-input --clear && \
+                    gunicorn django_unleashed.wsgi --bind 0.0.0.0:8000"
+    volumes:
+      - static_volume:/home/app/django_unleashed/static
+      - media_volume:/home/app/web/media
+    expose:
+      - 8000
+    env_file:
+      - ./.env
+    environment:
+      - POSTGRES_HOST=postgres_db
+    depends_on:
+      - postgres_db
+    networks:
+      - db-net
+  
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    volumes:
+      - static_volume:/home/app/django_unleashed/static
+      - media_volume:/home/app/web/media
+    ports:
+      - 80:80
+    depends_on:
+    - django
+    networks:
+      - db-net
+
+
+volumes:
+  postgres_data:
+  static_volume:
+  media_volume:
+
+
+networks:
+  db-net:
+    driver: bridge
+
+

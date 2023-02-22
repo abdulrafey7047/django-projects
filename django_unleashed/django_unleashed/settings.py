@@ -10,17 +10,13 @@ load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'secret_key' 
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = int(os.environ.get('DJANGO_DEBUG', default=0))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS').split()
 
 
 # Application definition
@@ -34,7 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'playlist',
     'crispy_forms',
-    'appointment_management_system',
+    # 'appointment_management_system',
     'custom_admin',
 ]
 
@@ -50,9 +46,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'django_unleashed.urls'
 
-# TEMPLATE_DIRS = (
-#     os.path.join(BASE_DIR, 'templates'),
-# )
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -81,12 +74,12 @@ DATABASES = {
     #     'NAME': BASE_DIR / 'db.sqlite3',
     # }
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'django_unleashed', 
-        'USER': 'postgres', 
-        'PASSWORD': 'Cforcat.001',
-        'HOST': '127.0.0.1', 
-        'PORT': '5432',
+        'ENGINE': os.environ.get('POSTGRES_ENGINE'),
+        'NAME': os.environ.get('POSTGRES_NAME'),
+        'USER': os.environ.get('POSTGRES_USER'),
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
+        'HOST': os.environ.get('POSTGRES_HOST'),
+        'PORT': os.environ.get('POSTGRES_PORT'),
     }
 }
 
@@ -115,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Karachi'
 
 USE_I18N = True
 
@@ -123,28 +116,21 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.1/howto/static-files/
-
 PROJECT_FOLDER = os.path.abspath(os.path.dirname(__file__))
-STATIC_ROOT = os.path.join(PROJECT_FOLDER, "static")                                  
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"), )              
-
+STATIC_ROOT = os.path.join(PROJECT_FOLDER, "static")                                  
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"), )
 STATICFILES_FINDERS = (                                                         
     'django.contrib.staticfiles.finders.FileSystemFinder',                      
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',                  
-) 
+)
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-TIME_ZONE = 'Asia/Karachi'
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "mediafiles"
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -153,11 +139,9 @@ LOGIN_URL = 'management-system-login'
 LOGIN_REDIRECT_URL = 'management-system-profile'
 
 
-# LOGOUT_REDIRECT_URL = 'management-system-login'
-
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = os.environ.get('EMAIL_HOST')
-EMAIL_PORT = int(os.environ.get('EMAIL_PORT'))
+EMAIL_BACKEND = os.environ.get('DJANGO_EMAIL_BACKEND')
+EMAIL_HOST = os.environ.get('DJANGO_EMAIL_HOST')
+EMAIL_PORT = int(os.environ.get('DJANGO_EMAIL_PORT'))
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+EMAIL_HOST_USER = os.environ.get('DJANGO_EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('DJANGO_EMAIL_HOST_PASSWORD')
