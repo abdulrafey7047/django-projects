@@ -37,7 +37,7 @@ services:
   
   nginx:
     build:
-      context: ./nginx
+      context: ./nginX
       dockerfile: Dockerfile
     volumes:
       - static_volume:/home/app/django_unleashed/static
