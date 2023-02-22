@@ -46,9 +46,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'django_unleashed.urls'
 
-# TEMPLATE_DIRS = (
-#     os.path.join(BASE_DIR, 'templates'),
-# )
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -111,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Karachi'
 
 USE_I18N = True
 
@@ -119,32 +116,21 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-
 PROJECT_FOLDER = os.path.abspath(os.path.dirname(__file__))
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(PROJECT_FOLDER, "static")                                  
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"), )  
-
-
-# STATIC_URL = "/static/"
-# STATIC_ROOT = BASE_DIR / "staticfiles"
-
-
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"), )
 STATICFILES_FINDERS = (                                                         
     'django.contrib.staticfiles.finders.FileSystemFinder',                      
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',                  
-) 
+)
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-TIME_ZONE = 'Asia/Karachi'
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "mediafiles"
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -152,8 +138,6 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_URL = 'management-system-login'
 LOGIN_REDIRECT_URL = 'management-system-profile'
 
-
-# LOGOUT_REDIRECT_URL = 'management-system-login'
 
 EMAIL_BACKEND = os.environ.get('DJANGO_EMAIL_BACKEND')
 EMAIL_HOST = os.environ.get('DJANGO_EMAIL_HOST')

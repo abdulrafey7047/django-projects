@@ -38,6 +38,7 @@ RUN addgroup -S app && adduser -S app -G app
 ENV HOME=/home/app
 ENV APP_HOME=/home/app/django_unleashed
 RUN mkdir $APP_HOME
+RUN mkdir $APP_HOME/media
 WORKDIR $APP_HOME
 
 # Installing dependencies

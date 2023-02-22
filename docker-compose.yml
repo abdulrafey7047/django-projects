@@ -23,6 +23,7 @@ services:
                     gunicorn django_unleashed.wsgi --bind 0.0.0.0:8000"
     volumes:
       - static_volume:/home/app/django_unleashed/static
+      - media_volume:/home/app/web/media
     expose:
       - 8000
     env_file:
@@ -40,6 +41,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - static_volume:/home/app/django_unleashed/static
+      - media_volume:/home/app/web/media
     ports:
       - 80:80
     depends_on:
@@ -51,6 +53,7 @@ services:
 volumes:
   postgres_data:
   static_volume:
+  media_volume:
 
 
 networks:
