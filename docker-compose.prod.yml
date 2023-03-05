@@ -1,0 +1,91 @@
+version: '3.8'
+
+
+services:
+
+  postgres_db:
+    container_name: postgres_db
+    image: postgres:13.0-alpine
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - ./.env
+    networks:
+      - db-net
+
+  django:
+    container_name: django
+    build:
+      context: ./django_unleashed
+      dockerfile: Dockerfile.prod
+    command: sh -c "python manage.py makemigrations && \
+                    python manage.py migrate && \
+                    python manage.py collectstatic --no-input --clear && \
+                    gunicorn django_unleashed.wsgi --bind 0.0.0.0:8000"
+    volumes:
+      - static_volume:/home/app/django_unleashed/static
+      - media_volume:/home/app/django_unleashed/media
+    expose:
+      - 8000
+    env_file:
+      - ./.env
+    environment:
+      - POSTGRES_HOST=postgres_db
+    depends_on:
+      - postgres_db
+    networks:
+      - db-net
+  
+  nginx:
+    container_name: nginx
+    build:
+      context: ./nginX
+      dockerfile: Dockerfile.prod
+    restart: always
+    ports:
+      - 443:443
+      - 80:80
+    volumes:
+      - static_volume:/home/app/django_unleashed/static
+      - media_volume:/home/app/django_unleashed/media
+      - certs:/etc/nginx/certs
+      - html:/usr/share/nginx/html
+      - vhost:/etc/nginx/vhost.d
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+    depends_on:
+    - django
+    networks:
+      - db-net
+
+  nginx-letsencrypt:
+    container_name: nginx-letsencrypt
+    image: jrcs/letsencrypt-nginx-proxy-companion
+    env_file:
+      - ./.env
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - certs:/etc/nginx/certs
+      - html:/usr/share/nginx/html
+      - vhost:/etc/nginx/vhost.d
+      - acme:/etc/acme.sh
+    depends_on:
+      - nginx
+
+
+volumes:
+  postgres_data:
+  static_volume:
+  media_volume:
+  certs:
+  html:
+  vhost:
+  acme:
+
+
+networks:
+  db-net:
+    driver: bridge
+
+
