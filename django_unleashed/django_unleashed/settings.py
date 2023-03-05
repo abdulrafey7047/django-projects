@@ -104,30 +104,25 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 # Internationalization
-# https://docs.djangoproject.com/en/4.1/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'Asia/Karachi'
-
 USE_I18N = True
-
 USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
 PROJECT_FOLDER = os.path.abspath(os.path.dirname(__file__))
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(PROJECT_FOLDER, "static")                                  
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"), )
+STATIC_ROOT = os.path.join(PROJECT_FOLDER, 'static')                                  
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 STATICFILES_FINDERS = (                                                         
     'django.contrib.staticfiles.finders.FileSystemFinder',                      
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',                  
 )
 
 
-MEDIA_URL = "/media/"
-MEDIA_ROOT = BASE_DIR / "mediafiles"
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
