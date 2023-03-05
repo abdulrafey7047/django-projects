@@ -11,7 +11,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     env_file:
-      - ./.env
+      - ../prod.env
     networks:
       - db-net
 
@@ -25,12 +25,12 @@ services:
                     python manage.py collectstatic --no-input --clear && \
                     gunicorn django_unleashed.wsgi --bind 0.0.0.0:8000"
     volumes:
-      - static_volume:/home/app/django_unleashed/static
-      - media_volume:/home/app/django_unleashed/media
+      - static_volume:/home/app/django_unleashed/staticfiles
+      - media_volume:/home/app/django_unleashed/mediafiles
     expose:
       - 8000
     env_file:
-      - ./.env
+      - ../prod.env
     environment:
       - POSTGRES_HOST=postgres_db
     depends_on:
@@ -48,8 +48,8 @@ services:
       - 443:443
       - 80:80
     volumes:
-      - static_volume:/home/app/django_unleashed/static
-      - media_volume:/home/app/django_unleashed/media
+      - static_volume:/home/app/django_unleashed/staticfiles
+      - media_volume:/home/app/django_unleashed/mediafiles
       - certs:/etc/nginx/certs
       - html:/usr/share/nginx/html
       - vhost:/etc/nginx/vhost.d
@@ -63,7 +63,7 @@ services:
     container_name: nginx-letsencrypt
     image: jrcs/letsencrypt-nginx-proxy-companion
     env_file:
-      - ./.env
+      - ../prod.env
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - certs:/etc/nginx/certs
