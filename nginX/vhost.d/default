@@ -1,5 +1,5 @@
 location /static/ {
-  alias /home/app/django_unleashed/django_unleashed/static/;
+  alias /home/app/django_unleashed/static/;
   add_header Access-Control-Allow-Origin *;
 }
 

@@ -5,7 +5,8 @@ from dotenv import load_dotenv
 from pathlib import Path
 
 # Loading Environment Variables
-load_dotenv()
+# if os.environ.get('DJANGO_MODE'):
+load_dotenv('../dev.env')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -141,4 +142,4 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.environ.get('DJANGO_EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('DJANGO_EMAIL_HOST_PASSWORD')
 
-CSRF_TRUSTED_ORIGINS = os.environ.get('DJANGO_CSRF_TRUSTED_ORIGINS')
+CSRF_TRUSTED_ORIGINS = os.environ.get('DJANGO_CSRF_TRUSTED_ORIGINS').split()
