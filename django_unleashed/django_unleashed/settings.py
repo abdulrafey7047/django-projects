@@ -5,8 +5,8 @@ from dotenv import load_dotenv
 from pathlib import Path
 
 # Loading Environment Variables
-# if os.environ.get('DJANGO_MODE'):
-load_dotenv('../dev.env')
+if os.environ.get('DJANGO_MODE'):
+    load_dotenv('../dev.env')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
