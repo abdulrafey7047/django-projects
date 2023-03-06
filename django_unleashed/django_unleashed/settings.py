@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     # 'appointment_management_system',
     'custom_admin',
+    'core',
 ]
 
 MIDDLEWARE = [

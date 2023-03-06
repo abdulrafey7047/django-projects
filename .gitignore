@@ -10,4 +10,4 @@ django_unleashed/*/migrations/
 
 *.env
 
-django_unleashed/media/
+
