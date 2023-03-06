@@ -9,3 +9,5 @@
 django_unleashed/*/migrations/
 
 *.env
+
+
