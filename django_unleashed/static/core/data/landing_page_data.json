@@ -1,0 +1,118 @@
+{
+    "title": "Abdul Rafey",
+    "menu_links": [
+        {"name": "Home", "href": "#intro", "active": true},
+        {"name": "About", "href": "#about"},
+        {"name": "Resume", "href": "#resume"},
+        {"name": "Portfolio", "href": "#portfolio"},
+        {"name": "Services", "href": "#services"},
+        {"name": "Contact", "href": "#contact"}
+    ],
+    "intro_section": {
+        "name": "Abdul Rafey.",
+        "position": "Software Engineer",
+        "links": [
+            {"name": "linkedin", "href": "https://www.linkedin.com/in/abdulrafey183"},
+            {"name": "github", "href": "https://github.com/abdulrafey7047"}
+        ]
+    },
+    "about_section": {
+        "introduction_title": "Let me introduce myself.",
+        "introduction_paragraph": [
+            {"text": "I am a Software Engineer based in Lahore, Pakistan, working as a Backend Developer in the "},
+            {"text": "MoonBeam", "href": "https://www.moonbeam.fm"},
+            {"text": "team at "},
+            {"text": "Arbisoft.", "href": "https://www.arbisoft.com"},
+            {"text": "Apart from developing backends I love working on Deep Learning and Data Dcience projects and deploying them to the Cloud."}
+        ],
+        "profile": {
+            "paragraph": [
+                {"text": "A 22 years old with a Bachelor's Degree in Software Engineering from "},
+                {"text": "National University of Sciences and Technology (NUST),", "href": "https://nust.edu.pk/"},
+                {"text": " Pakistan, who likes basketball, cricket and E-gaming."}
+            ],
+            "full_name": "Abdul Rafey",
+            "birth_date": "March 12, 2001",
+            "current_job_role": "Backend Developer",
+            "website": {
+                "href": "https://abdulrafey.com",
+                "text": "www.abdulrafey.com"
+            },
+            "email": "arafey183@gmail.com"
+        },
+        "skills": {
+            "paragraph": "I have a broad skill set, comprising of Backend Development with django and flask, Data Science using pandas, numpy, dask and matplotlib, Machine/Deep learning using Tensorflow, Keras and PyTorch, Cloud Solutions using AWS and Azure. I even have 2 MS Azure certifications!",
+            "skill_list": [
+                {"name": "PYTHON", "score": "85"},
+                {"name": "DJANGO", "score": "80"},
+                {"name": "CLOUD (AWS/Azure/GCP)", "score": "75"},
+                {"name": "JAVASCRIPT", "score": "75"},
+                {"name": "DOCKER", "score": "70"}
+                
+            ]
+        }
+    },
+    "resume_section": {
+        "introduction_title": "More of my credentials.",
+        "introduction_paragraph": "Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do.",
+        "work_experiences": [
+            {
+                "company": {"name": "Arbisoft", "href": "https://www.arbisoft.com"},
+                "job_title": "Backend Developer",
+                "start_date": "June 2022",
+                "end_date": "Present",
+                "paragraph": [
+                    {"text": "I'm currently working as a backend engineer in the MoonBeam team at Atbisoft Ltd. we're currently developing a recommendation engine for recommending podcasts. My responsibilities are to: "},
+                    {"text": "Develop and Maintain Data Fetching Pipelines", "bullet_point": true},
+                    {"text": "Develop and Maintain Model Training Pipeline", "bullet_point": true},
+                    {"text": "Model Deployment using Flask as Backend", "bullet_point": true},
+                    {"text": "The tools I've been using to carry out these responsibilities include python libraries such as pandas, numpy, dask etc, snowflake, MongoDB, AWS services such as SageMaker, Lambda, S3, EC2, EventBridge etc."}
+                ]
+            },
+            {
+                "company": {"name": "Fiverr", "href": "https://www.fiverr.com/guyro183"},
+                "job_title": "Freelancer",
+                "start_date": "November 2020",
+                "end_date": "June 2022",
+                "paragraph": [
+                    {"text": "I am a level 2 seller on fiverr, my pool of services includes Backend, Data Science and Deep/Machine Learning. Some prominent projects I worked on for my clients are:"},
+                    {"text": "Development of Sales Management System for a real estate company with a Flask backend and HTML/CSS frontend.", "bullet_point": true},
+                    {"text": "Development and Deployment of a semi-supervised text classifier on a Centos6 VM on MS Azure with a Flask backend.", "bullet_point": true},
+                    {"text": "Training and Development of an English to Spanish Neural Machine Translation transformer model from scratch using Tensorflow, numpy and pandas.", "bullet_point": true},
+                    {"text": "You can still find me on fiverr here,  but I'm not taking any new projects at the moment."}
+                ]
+            }
+        ],
+        "education_list": [
+            {
+                "institute": {"name": "National University of Sciences and Technology", "href": "https://nust.edu.pk/"},
+                "enrolled_in": "Bachelor's Degree in Software Engineering",
+                "start_date": "September 2018",
+                "end_date": "June 2022",
+                "paragraph": [
+                    {"text": "Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi incididunt."}
+                ]
+            },
+            {
+                "institute": {"name": "Punjab Group of Colleges", "href": "https://pgc.edu/"},
+                "enrolled_in": "FSc. Pre-Engineering",
+                "start_date": "August 2016",
+                "end_date": "May 2018",
+                "paragraph": [
+                    {"text": "Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi incididunt."}
+                ]
+            },
+            {
+                "institute": {"name": "LaSalle", "href": "https://lasallefaisalabad.edu.pk/"},
+                "enrolled_in": "High School",
+                "start_date": "April 2014",
+                "end_date": "March 2016",
+                "paragraph": [
+                    {"text": "Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi incididunt."}
+                ]
+            }
+
+        ]
+    }
+
+}
