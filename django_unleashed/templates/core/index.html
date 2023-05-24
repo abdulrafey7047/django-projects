@@ -88,7 +88,7 @@
    				<h5>About</h5>
    				<h1>{{ about_section.title }}</h1>
    				<div class="intro-info">
-   					<img src="{% static 'core/images/profile-pic.jpg' %}" alt="Profile Picture">
+   					<img src="{% static 'core/images/'|add:about_section.profile_pic' %}" alt="Profile Picture">
 					<p class="lead">
 						{% for chunk in about_section.description %}
 							{% if chunk.href %}
@@ -258,7 +258,11 @@
 								</h4>
 								<p>
 									{% for chunk in education.description %}
-										{{ chunk.text }}
+										{% if chunk.href %}
+											<a href="{{ chunk.href }}" target="_blank">{{ chunk.text }}</a>
+										{% else %}
+											{{ chunk.text }}
+										{% endif %}
 									{% endfor %}
 								</p>
 							</div>
@@ -325,7 +329,7 @@
 							<div class="categories">{{ project.type }}t</div>
 						</div>
 							<div class="link-box">
-								<a href="{{ project.href }}" target="_blank">Details</a>
+								<a href="{{ project.href.link }}" target="_blank">{{ project.href.text }}</a>
 								<a href="#" class="popup-modal-dismiss">Close</a>
 							</div>		      
 						</div>

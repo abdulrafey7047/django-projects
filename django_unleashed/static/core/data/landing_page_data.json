@@ -18,6 +18,7 @@
     },
     "about_section": {
         "title": "Let me introduce myself.",
+        "profile_pic": "profile-pic.png",
         "description": [
             {"text": "I am a Software Engineer based in Lahore, Pakistan, working as a Backend Developer in the "},
             {"text": "MoonBeam", "href": "https://www.moonbeam.fm"},
@@ -65,7 +66,7 @@
                 "start_date": "June 2022",
                 "end_date": "Present",
                 "description": [
-                    {"text": "I'm working as a backend engineer in the MoonBeam team at Atbisoft Ltd. Currently we are developing a podcast recommendation engine for ", "new_line": true},
+                    {"text": "I'm part of the MoonBeam team at Arbisoft Ltd working as a backend engineer. Currently we are developing a podcast recommendation engine for ", "new_line": true},
                     {"text": "Audacy.", "href": "https://www.audacy.com"},
                     {"text": " My responsibilities are to: "},
                     {"text": "Develop and Maintain Data Fetching Pipelines", "bullet_point": true},
@@ -80,7 +81,7 @@
                 "start_date": "November 2020",
                 "end_date": "June 2022",
                 "description": [
-                    {"text": "I am a level 2 seller on fiverr, my pool of services includes Backend, Data Science and Deep/Machine Learning. Some prominent projects I worked on for my clients are:"},
+                    {"text": "I am a level 2 seller on fiverr, my pool of services include Backend, Data Science and Deep/Machine Learning. Some prominent projects I worked on for my clients are:"},
                     {"text": "Development of Sales Management System for a real estate company with a Flask backend and HTML/CSS frontend.", "bullet_point": true},
                     {"text": "Development and Deployment of a semi-supervised text classifier on a Centos6 VM on MS Azure with a Flask backend.", "bullet_point": true},
                     {"text": "Training and Development of an English to Spanish Neural Machine Translation transformer model from scratch using Tensorflow, numpy and pandas.", "bullet_point": true},
@@ -95,7 +96,13 @@
                 "start_date": "September 2018",
                 "end_date": "June 2022",
                 "description": [
-                    {"text": "Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi incididunt."}
+                    {"text": "In university I pursued a Software Engineering Degree from "},
+                    {"text": "School of Electrical Engineering and Computers Sciences (SEECS).", "href": "https://seecs.nust.edu.pk/"},
+                    {"text": " I started playing basketball again, after a long time. I was also a part of "}, 
+                    {"text": "NUST Media Club", "href": "https://www.instagram.com/nustmediaclub/"},
+                    {"text": " and "},
+                    {"text": "NUST Fitness Club", "href": "#"},
+                    {"text": " for the 2019-2020 tenure. I partied hard and studied harder to graduate with a 3.53/4.0 CGPA."}
                 ]
             },
             {
@@ -104,7 +111,7 @@
                 "start_date": "August 2016",
                 "end_date": "May 2018",
                 "description": [
-                    {"text": "I majored in Biology in school and realized it was not for me so I decided to pursue a career in engineering. I took Maths, Physics and Chemistry as my majors. I started E-gaming to balance out the academic stress and now I can't stop. I got 88% in college."}
+                    {"text": "I majored in Biology in school and realized it was not for me so I decided to pursue a career in engineering. I took Maths, Physics and Chemistry as my majors. I started E-gaming to balance out the academic stress and now I can't stop. I even assembled a PC from scratch for gaming. With E-gaming helping me along the way, I managed to get 88% in college."}
                 ]
             },
             {
@@ -131,7 +138,7 @@
                 "type": "Web Development",
                 "image": {"src": "carshop.jpg", "alt": "CarShop"},
                 "description": "Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.",
-                "href": "https://github.com/abdulrafey7047/CarShop"
+                "href": {"text": "Checkout on GitHub", "link": "https://github.com/abdulrafey7047/CarShop"}
             },
             {
                 "id": "2",
@@ -139,7 +146,7 @@
                 "type": "Web Development",
                 "image": {"src": "ams.jpg", "alt": "Shutterbug"},
                 "description": "Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.",
-                "href": "https://abdulrafey.com/ams"
+                "href": {"text": "Details", "link": "https://abdulrafey.com/ams"}
             },
             {
                 "id": "3",
@@ -147,7 +154,7 @@
                 "type": "NLP",
                 "image": {"src": "text.jpg", "alt": "Text Generation"},
                 "description": "Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.",
-                "href": "https://github.com/abdulrafey7047/Creating_Headlines_by_Text_Generation_using_LSTMs"
+                "href": {"text": "Checkout on GitHub", "link": "https://github.com/abdulrafey7047/Creating_Headlines_by_Text_Generation_using_LSTMs/blob/main/main.ipynb"}
             },
             {
                 "id": "4",
@@ -155,14 +162,14 @@
                 "type": "NLP",
                 "image": {"src": "transformer.jpg", "alt": "Nueral Machine Translation"},
                 "description": "Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.",
-                "href": "https://github.com/abdulrafey7047/Building_Transformer_from_Scratch_for_Neural_Machine_Translation"
+                "href": {"text": "Checkout on GitHub", "link": "https://github.com/abdulrafey7047/Building_Transformer_from_Scratch_for_Neural_Machine_Translation/blob/main/main.ipynb"}
             }
         ]
     },
     "services_section": {
         "title": "What I Can Do",
         "description": [
-            {"text": "Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do."} 
+            {"text": "I have learned a lot from the projects I've done in the past,. I have worked on projects ranging from web development to data science and machine learning. I have also worked on cloud deployments and CI/CD pipelines. I have listed some of my skills below."} 
         ],
         "services": [
             {"name": "Backed Development", "icon": "window", "description": "I have vast experience developing multiple backends for different projects using python web frameworks (flask and django). I am currently working on a django backend for a recommendation engine in my current job. To look at some of these projects visit my github."},
@@ -175,7 +182,7 @@
     "contact_section": {
         "title": "I'd Love To Hear From You.",
         "description": [
-            {"text": "Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do."}
+            {"text": "You have something you want to say to me? Feel free to send me an email! I'll try to get back to you as soon as possible."}
         ],
         "location": ["Lahore,", "Pakistan"],
         "emails": ["arafey183@gmail.com", "abdulrafey7047@gmail.com"]
