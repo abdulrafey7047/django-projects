@@ -1645,9 +1645,6 @@ header .logo a {
 	margin-left: 35%;
 	padding-left: 60px;
 }
-#resume .timeline-content ul div{
-	margin-left: -30px;
-}
 #resume .timeline-content h4 {
 	position: relative;
 	padding-bottom: 1.8rem;
@@ -1662,6 +1659,7 @@ header .logo a {
 	left: 0;
 	bottom: 0;
 }
+
 
 /**
  * responsive:

@@ -17,8 +17,8 @@
         ]
     },
     "about_section": {
-        "introduction_title": "Let me introduce myself.",
-        "introduction_paragraph": [
+        "title": "Let me introduce myself.",
+        "description": [
             {"text": "I am a Software Engineer based in Lahore, Pakistan, working as a Backend Developer in the "},
             {"text": "MoonBeam", "href": "https://www.moonbeam.fm"},
             {"text": "team at "},
@@ -26,22 +26,23 @@
             {"text": "Apart from developing backends I love working on Deep Learning and Data Dcience projects and deploying them to the Cloud."}
         ],
         "profile": {
-            "paragraph": [
+            "description": [
                 {"text": "A 22 years old with a Bachelor's Degree in Software Engineering from "},
                 {"text": "National University of Sciences and Technology (NUST),", "href": "https://nust.edu.pk/"},
                 {"text": " Pakistan, who likes basketball, cricket and E-gaming."}
             ],
-            "full_name": "Abdul Rafey",
-            "birth_date": "March 12, 2001",
-            "current_job_role": "Backend Developer",
-            "website": {
-                "href": "https://abdulrafey.com",
-                "text": "www.abdulrafey.com"
-            },
-            "email": "arafey183@gmail.com"
+            "info_list": [
+                {"title": "Full Name", "text": "Abdul Rafey"},
+                {"title": "Birth Date", "text": "March 12, 2001"},
+                {"title": "Current Job Role", "text": "Backend Developer"},
+                {"title": "Website", "text": "www.abdulrafey.com", "href": "https://abdulrafey.com"},
+                {"title": "Email", "text": "arafey183@gmail.com"}
+            ]
         },
         "skills": {
-            "paragraph": "I have a broad skill set, comprising of Backend Development with django and flask, Data Science using pandas, numpy, dask and matplotlib, Machine/Deep learning using Tensorflow, Keras and PyTorch, Cloud Solutions using AWS and Azure. I even have 2 MS Azure certifications!",
+            "description": [
+                {"text": "I have a broad skill set, comprising of Backend Development with django and flask, Data Science using pandas, numpy, dask and matplotlib, Machine/Deep learning using Tensorflow, Keras and PyTorch, Cloud Solutions using AWS and Azure. I even have 2 MS Azure certifications!"}
+            ],
             "skill_list": [
                 {"name": "PYTHON", "score": "85"},
                 {"name": "DJANGO", "score": "80"},
@@ -53,20 +54,24 @@
         }
     },
     "resume_section": {
-        "introduction_title": "More of my credentials.",
-        "introduction_paragraph": "Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do.",
+        "title": "More of my credentials.",
+        "description": [
+            {"text": "Here are some details about what have I done to get here and what I have been upto. My educational and professional background is as follows:"}
+        ],
         "work_experiences": [
             {
                 "company": {"name": "Arbisoft", "href": "https://www.arbisoft.com"},
                 "job_title": "Backend Developer",
                 "start_date": "June 2022",
                 "end_date": "Present",
-                "paragraph": [
-                    {"text": "I'm currently working as a backend engineer in the MoonBeam team at Atbisoft Ltd. we're currently developing a recommendation engine for recommending podcasts. My responsibilities are to: "},
+                "description": [
+                    {"text": "I'm working as a backend engineer in the MoonBeam team at Atbisoft Ltd. Currently we are developing a podcast recommendation engine for ", "new_line": true},
+                    {"text": "Audacy.", "href": "https://www.audacy.com"},
+                    {"text": " My responsibilities are to: "},
                     {"text": "Develop and Maintain Data Fetching Pipelines", "bullet_point": true},
                     {"text": "Develop and Maintain Model Training Pipeline", "bullet_point": true},
                     {"text": "Model Deployment using Flask as Backend", "bullet_point": true},
-                    {"text": "The tools I've been using to carry out these responsibilities include python libraries such as pandas, numpy, dask etc, snowflake, MongoDB, AWS services such as SageMaker, Lambda, S3, EC2, EventBridge etc."}
+                    {"text": "The tools I've been using to carry out these responsibilities include python libraries such as pandas, numpy, dask etc, snowflake, MongoDB, AWS services such as SageMaker, Lambda, S3, EC2, EventBridge etc.", "new_line": true}
                 ]
             },
             {
@@ -74,7 +79,7 @@
                 "job_title": "Freelancer",
                 "start_date": "November 2020",
                 "end_date": "June 2022",
-                "paragraph": [
+                "description": [
                     {"text": "I am a level 2 seller on fiverr, my pool of services includes Backend, Data Science and Deep/Machine Learning. Some prominent projects I worked on for my clients are:"},
                     {"text": "Development of Sales Management System for a real estate company with a Flask backend and HTML/CSS frontend.", "bullet_point": true},
                     {"text": "Development and Deployment of a semi-supervised text classifier on a Centos6 VM on MS Azure with a Flask backend.", "bullet_point": true},
@@ -89,7 +94,7 @@
                 "enrolled_in": "Bachelor's Degree in Software Engineering",
                 "start_date": "September 2018",
                 "end_date": "June 2022",
-                "paragraph": [
+                "description": [
                     {"text": "Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi incididunt."}
                 ]
             },
@@ -98,8 +103,8 @@
                 "enrolled_in": "FSc. Pre-Engineering",
                 "start_date": "August 2016",
                 "end_date": "May 2018",
-                "paragraph": [
-                    {"text": "Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi incididunt."}
+                "description": [
+                    {"text": "I majored in Biology in school and realized it was not for me so I decided to pursue a career in engineering. I took Maths, Physics and Chemistry as my majors. I started E-gaming to balance out the academic stress and now I can't stop. I got 88% in college."}
                 ]
             },
             {
@@ -107,12 +112,72 @@
                 "enrolled_in": "High School",
                 "start_date": "April 2014",
                 "end_date": "March 2016",
-                "paragraph": [
-                    {"text": "Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi incididunt."}
+                "description": [
+                    {"text": "In Pakistan 9th and 10th grade are called high school. I majored in biology and other science subjects (Physics, Chemistry and Maths) in high schoolI. I used to play basketball a lot in my school days. I was the vice captain of my basketball team in 8th grade, but had to drop out to maintain good grades. It was tough but it paid off when I got 91% in high school."}
                 ]
             }
 
         ]
-    }
+    },
+    "portfolio_section": {
+        "title": "Check Out Some of My Works.",
+        "description": [
+            {"text": "Following are some projects that I have worked on in the past. I have worked on a lot of projects, but I have only included the ones that I think are worth showing off."}
+        ],
+        "projects": [
+            {
+                "id": "1",
+                "title": "CarShop",
+                "type": "Web Development",
+                "image": {"src": "carshop.jpg", "alt": "CarShop"},
+                "description": "Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.",
+                "href": "https://github.com/abdulrafey7047/CarShop"
+            },
+            {
+                "id": "2",
+                "title": "Appointment Management System",
+                "type": "Web Development",
+                "image": {"src": "ams.jpg", "alt": "Shutterbug"},
+                "description": "Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.",
+                "href": "https://abdulrafey.com/ams"
+            },
+            {
+                "id": "3",
+                "title": "Text Generation",
+                "type": "NLP",
+                "image": {"src": "text.jpg", "alt": "Text Generation"},
+                "description": "Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.",
+                "href": "https://github.com/abdulrafey7047/Creating_Headlines_by_Text_Generation_using_LSTMs"
+            },
+            {
+                "id": "4",
+                "title": "Coding a Transformer from Scratch for Nueral Machine Translation",
+                "type": "NLP",
+                "image": {"src": "transformer.jpg", "alt": "Nueral Machine Translation"},
+                "description": "Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.",
+                "href": "https://github.com/abdulrafey7047/Building_Transformer_from_Scratch_for_Neural_Machine_Translation"
+            }
+        ]
+    },
+    "services_section": {
+        "title": "What I Can Do",
+        "description": [
+            {"text": "Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do."} 
+        ],
+        "services": [
+            {"name": "Backed Development", "icon": "window", "description": "I have vast experience developing multiple backends for different projects using python web frameworks (flask and django). I am currently working on a django backend for a recommendation engine in my current job. To look at some of these projects visit my github."},
+            {"name": "Data Science", "icon": "pie-chart", "description": "I have worked on various data science projects which utilized python data science libraries like pandas, numpy and dask. My most recent project includes feature extraction and feature engineering from data which is fed to a model for generating recommendations."},
+            {"name": "Cloud Deployments", "icon": "cloud", "description": "I am a 2 time Microsoft certified Azure engineer, I also have experience with different AWS services such as SageMaker, EC2, Lambda etc. I have deployed multiple web backends to VMs with CI/CD using Jenkins and Docker."},
+            {"name": "Development WorkFlows", "icon": "terminal",  "description": "I am familiar with the software development life cycle using agile workflows like SCRUM, using tools like Jira and Confluence."}
+        ]
 
+    },
+    "contact_section": {
+        "title": "I'd Love To Hear From You.",
+        "description": [
+            {"text": "Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do."}
+        ],
+        "location": ["Lahore,", "Pakistan"],
+        "emails": ["arafey183@gmail.com", "abdulrafey7047@gmail.com"]
+    }
 }
