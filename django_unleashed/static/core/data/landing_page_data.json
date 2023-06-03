@@ -101,7 +101,7 @@
                     {"text": " I started playing basketball again, after a long time. I was also a part of "}, 
                     {"text": "NUST Media Club", "href": "https://www.instagram.com/nustmediaclub/"},
                     {"text": " and "},
-                    {"text": "NUST Fitness Club", "href": "#"},
+                    {"text": "NUST Fitness Club", "href": "https://www.instagram.com/nust_fitness_club/"},
                     {"text": " for the 2019-2020 tenure. I partied hard and studied harder to graduate with a 3.53/4.0 CGPA."}
                 ]
             },
@@ -138,7 +138,7 @@
                 "type": "Web Development",
                 "image": {"src": "carshop.jpg", "alt": "CarShop"},
                 "description": "Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.",
-                "href": {"text": "Checkout on GitHub", "link": "https://github.com/abdulrafey7047/CarShop"}
+                "href": {"text": "GitHub", "link": "https://github.com/abdulrafey7047/CarShop"}
             },
             {
                 "id": "2",
@@ -146,7 +146,7 @@
                 "type": "Web Development",
                 "image": {"src": "ams.jpg", "alt": "Shutterbug"},
                 "description": "Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.",
-                "href": {"text": "Details", "link": "https://abdulrafey.com/ams"}
+                "href": {"text": "Demo", "link": "https://abdulrafey.com/ams"}
             },
             {
                 "id": "3",
@@ -154,7 +154,7 @@
                 "type": "NLP",
                 "image": {"src": "text.jpg", "alt": "Text Generation"},
                 "description": "Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.",
-                "href": {"text": "Checkout on GitHub", "link": "https://github.com/abdulrafey7047/Creating_Headlines_by_Text_Generation_using_LSTMs/blob/main/main.ipynb"}
+                "href": {"text": "GitHub", "link": "https://github.com/abdulrafey7047/Creating_Headlines_by_Text_Generation_using_LSTMs/blob/main/main.ipynb"}
             },
             {
                 "id": "4",
@@ -162,14 +162,14 @@
                 "type": "NLP",
                 "image": {"src": "transformer.jpg", "alt": "Nueral Machine Translation"},
                 "description": "Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.",
-                "href": {"text": "Checkout on GitHub", "link": "https://github.com/abdulrafey7047/Building_Transformer_from_Scratch_for_Neural_Machine_Translation/blob/main/main.ipynb"}
+                "href": {"text": "GitHub", "link": "https://github.com/abdulrafey7047/Building_Transformer_from_Scratch_for_Neural_Machine_Translation/blob/main/main.ipynb"}
             }
         ]
     },
     "services_section": {
         "title": "What I Can Do",
         "description": [
-            {"text": "I have learned a lot from the projects I've done in the past,. I have worked on projects ranging from web development to data science and machine learning. I have also worked on cloud deployments and CI/CD pipelines. I have listed some of my skills below."} 
+            {"text": "I have learned a lot from the projects I've done in the past. The projects span over Web Development, Data Science and Machine/Deep Learning. I have also worked on cloud deployments and CI/CD pipelines. I have listed some of my skills below."} 
         ],
         "services": [
             {"name": "Backed Development", "icon": "window", "description": "I have vast experience developing multiple backends for different projects using python web frameworks (flask and django). I am currently working on a django backend for a recommendation engine in my current job. To look at some of these projects visit my github."},

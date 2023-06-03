@@ -43,7 +43,7 @@ services:
       dockerfile: Dockerfile.dev
     volumes:
       - static_volume:/home/app/django_unleashed/static
-      - media_volume:/home/app/django_unleashed/media
+      - media_volume:/app/django_unleashed/media
     ports:
       - 80:80
     depends_on:
