@@ -6,7 +6,7 @@ services:
   postgres_db:
     image: postgres:13.0-alpine
     ports:
-      - '5432:5432'
+      - '5433:5433'
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     env_file:
@@ -43,7 +43,7 @@ services:
       dockerfile: Dockerfile.dev
     volumes:
       - static_volume:/home/app/django_unleashed/static
-      - media_volume:/home/app/django_unleashed/media
+      - media_volume:/app/django_unleashed/media
     ports:
       - 80:80
     depends_on:
