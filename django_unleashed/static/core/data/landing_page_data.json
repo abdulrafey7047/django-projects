@@ -18,7 +18,7 @@
     },
     "about_section": {
         "title": "Let me introduce myself.",
-        "profile_pic": "profile-pic.png",
+        "profile_pic": "profile-pic.jpg",
         "description": [
             {"text": "A Software Engineer with broad experience, technical expertise and proficiency in software design and development. Experienced in developing"},
             {"text": "web-backends", "bold": true},
@@ -35,25 +35,40 @@
         ],
         "profile": {
             "description": [
-                {"text": "Based in Lahore, Pakistan, working as a Software Engineer in the "},
+                {"text": " I am a Software Engineer working with the "},
                 {"text": "MoonBeam", "href": "https://www.moonbeam.fm"},
-                {"text": "team at "},
-                {"text": "Arbisoft.", "href": "https://www.arbisoft.com"},
-                {"text": "I have a Bachelor's Degree in Software Engineering from "},
+                {"text": " team at "},
+                {"text": "Arbisoft", "href": "https://www.arbisoft.com"},
+                {"text": ". located in "},
+                {"text": "Lahore, Pakistan.", "href":"#"},
+                {"text": "I hold a Bachelor's Degree in Software Engineering from the "},
                 {"text": "National University of Sciences and Technology (NUST),", "href": "https://nust.edu.pk/"},
-                {"text": " Pakistan, and I love basketball, cricket and E-gaming."}
+                {"text": "Pakistan. In my free time, I enjoy playing basketball, cricket, and indulging in E-gaming."}                
             ],
             "info_list": [
                 {"title": "Full Name", "text": "Abdul Rafey"},
                 {"title": "Date of Birth", "text": "March 12, 2001"},
                 {"title": "Current Job Role", "text": "Software Engineer"},
                 {"title": "Website", "text": "www.abdulrafey.com", "href": "https://abdulrafey.com"},
-                {"title": "Email", "text": "arafey183@gmail.com", "href": "mailto:arafey183@gmail.com"}
+                {"title": "Email", "text": "arafey183@gmail.com", "href": "mailto:arafey183@gmail.com"},
+                {"logo": true, "name": "linkedin", "href": "https://www.linkedin.com/in/abdulrafey183/"},
+                {"logo": true, "name": "github", "href": "https://github.com/abdulrafey7047/"}
             ]
         },
         "skills": {
             "description": [
-                {"text": "I have a broad skill set, comprising of Backend Development with django and flask, Data Science using pandas, numpy, dask and matplotlib, Machine/Deep learning using Tensorflow, Keras and PyTorch, Cloud Solutions using AWS and Azure. I even have 2 MS Azure certifications!"}
+                {"text": "My skill set encompasses various areas, including Backend Development using "},
+                {"text": "Django, DRF, Flask, Celery,", "bold": true},
+                {"text": " and "},
+                {"text": "Scrapy.", "bold": true},
+                {"text": " Additionally, I have experience in Data Science and Machine/Deep Learning projects, employing "},
+                {"text": " Pandas, Numpy, Dask, Matplotlib, Jupyter, Tensorflow, Keras,", "bold": true},
+                {"text": " and "},
+                {"text": "PyTorch.", "bold": true},
+                {"text": " Moreover, I have proficiency in deploying projects on cloud platforms such as "},
+                {"text": "AWS", "bold": true},
+                {"text": " and "},
+                {"text": "Azure.", "bold": true}    
             ],
             "skill_list": [
                 {"name": "PYTHON", "score": "8.5"},

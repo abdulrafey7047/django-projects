@@ -126,16 +126,22 @@
    
 				<ul class="info-list">
 					{% for info in about_section.profile.info_list %}
-						<li>
-							<strong>{{ info.title }}:</strong>
-							<span>
-								{% if info.href %}
-									<a href="{{ info.href }}" target="_blank">{{ info.text }}</a>
-								{% else %}
-									{{ info.text }}
-								{% endif %}
-							</span>
-						</li>
+						{% if info.logo%}
+							<a href="{{ info.href }}" target="_blank" style="margin-right:10px">
+								<i class="fa fa-{{ info.name }}"></i>
+							</a>	
+						{% else %}
+							<li>
+								<strong>{{ info.title }}:</strong>
+								<span>
+									{% if info.href %}
+										<a href="{{ info.href }}" target="_blank">{{ info.text }}</a>
+									{% else %}
+										{{ info.text }}
+									{% endif %}
+								</span>
+							</li>
+						{% endif %}
 					{% endfor %}
 				</ul>
    			</div>
@@ -146,6 +152,8 @@
 					{% for chunk in about_section.skills.description %}
 						{% if chunk.href %}
 							<a href="{{ chunk.href }}" target="_blank">{{ chunk.text }}</a>
+						{% elif chunk.bold %}
+							<strong>{{ chunk.text }}</strong>
 						{% else %}
 							{{ chunk.text }}
 						{% endif %}
