@@ -4,6 +4,6 @@ location /static/ {
 }
 
 location /media/ {
-  alias /home/app/django_unleashed/media/;
+  alias /app/django_unleashed/media/;
   add_header Access-Control-Allow-Origin *;
 }

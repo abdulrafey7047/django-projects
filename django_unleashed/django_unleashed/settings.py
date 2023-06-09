@@ -31,7 +31,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'playlist',
     'crispy_forms',
-    # 'appointment_management_system',
+    'appointment_management_system',
     'custom_admin',
     'core',
 ]
