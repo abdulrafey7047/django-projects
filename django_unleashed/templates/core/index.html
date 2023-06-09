@@ -98,8 +98,8 @@
 						{% for chunk in about_section.description %}
 							{% if chunk.href %}
 								<a href="{{ chunk.href }}" target="_blank">{{ chunk.text }}</a>
-							{% elif chunk.break %}
-								<br>
+							{% elif chunk.bold %}
+								<strong>{{ chunk.text }}</strong>
 							{% else %}
 								{{ chunk.text }}
 							{% endif %}
