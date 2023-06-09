@@ -68,7 +68,9 @@
 					<h5>Hey!</h5>
 					<h1>I'm {{ intro_section.name }}</h1>
 					<p class="intro-position">
-						<span>{{ intro_section.position }}</span>
+						{% for position in intro_section.positions %}
+							<span>{{ position }}</span>
+						{% endfor %}
 					</p>
 					<a class="button stroke smoothscroll" href="#about" title="">More About Me</a>
 				</div>  
@@ -96,6 +98,8 @@
 						{% for chunk in about_section.description %}
 							{% if chunk.href %}
 								<a href="{{ chunk.href }}" target="_blank">{{ chunk.text }}</a>
+							{% elif chunk.break %}
+								<br>
 							{% else %}
 								{{ chunk.text }}
 							{% endif %}
@@ -151,7 +155,7 @@
 				<ul class="skill-bars">
 					{% for skill in about_section.skills.skill_list %}
 						<li>
-							<div class="progress percent{{ skill.score }}"><span>{{ skill.score }}%</span></div>
+							<div class="progress percent{% widthratio skill.score 1 10 %}"><span>{{ skill.score }}</span></div>
 							<strong>{{ skill.name }}</strong>
 						</li>
 					{% endfor %}

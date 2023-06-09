@@ -10,7 +10,7 @@
     ],
     "intro_section": {
         "name": "Abdul Rafey.",
-        "position": "Software Engineer",
+        "positions": ["Software Engineer", "Python", "Django", "Snowflake", "AWS"],
         "links": [
             {"name": "linkedin", "href": "https://www.linkedin.com/in/abdulrafey183"},
             {"name": "github", "href": "https://github.com/abdulrafey7047"}
@@ -20,24 +20,35 @@
         "title": "Let me introduce myself.",
         "profile_pic": "profile-pic.png",
         "description": [
-            {"text": "I am a Software Engineer based in Lahore, Pakistan, working as a Backend Developer in the "},
-            {"text": "MoonBeam", "href": "https://www.moonbeam.fm"},
-            {"text": "team at "},
-            {"text": "Arbisoft.", "href": "https://www.arbisoft.com"},
-            {"text": "Apart from developing backends I love working on Deep Learning and Data Dcience projects and deploying them to the Cloud."}
+            {"text": "A Software Engineer with broad experience, technical expertise and proficiency in software design and development. Experienced in developing"},
+            {"text": "web-backends", "bold": true},
+            {"text": " and "},
+            {"text": "deep/machine learning", "bold": true},
+            {"text": " solutions, fronting in the phases of design, development and delivery using Agile workflows of scrum and pair programming, specializing in "},
+            {"text": "Python", "bold": true},
+            {"text": " and related libraries. Certified "},
+            {"text": "Azure AI Engineer", "bold": true},
+            {"text": " with hands-on experience in cloud deployment via "},
+            {"text": "AWS", "bold": true},
+            {"text": " and ", "bold": true},
+            {"text": "Azure.", "bold": true}
         ],
         "profile": {
             "description": [
-                {"text": "A 22 years old with a Bachelor's Degree in Software Engineering from "},
+                {"text": "Based in Lahore, Pakistan, working as a Software Engineer in the "},
+                {"text": "MoonBeam", "href": "https://www.moonbeam.fm"},
+                {"text": "team at "},
+                {"text": "Arbisoft.", "href": "https://www.arbisoft.com"},
+                {"text": "I have a Bachelor's Degree in Software Engineering from "},
                 {"text": "National University of Sciences and Technology (NUST),", "href": "https://nust.edu.pk/"},
-                {"text": " Pakistan, who likes basketball, cricket and E-gaming."}
+                {"text": " Pakistan, and I love basketball, cricket and E-gaming."}
             ],
             "info_list": [
                 {"title": "Full Name", "text": "Abdul Rafey"},
-                {"title": "Birth Date", "text": "March 12, 2001"},
-                {"title": "Current Job Role", "text": "Backend Developer"},
+                {"title": "Date of Birth", "text": "March 12, 2001"},
+                {"title": "Current Job Role", "text": "Software Engineer"},
                 {"title": "Website", "text": "www.abdulrafey.com", "href": "https://abdulrafey.com"},
-                {"title": "Email", "text": "arafey183@gmail.com"}
+                {"title": "Email", "text": "arafey183@gmail.com", "href": "mailto:arafey183@gmail.com"}
             ]
         },
         "skills": {
@@ -45,11 +56,11 @@
                 {"text": "I have a broad skill set, comprising of Backend Development with django and flask, Data Science using pandas, numpy, dask and matplotlib, Machine/Deep learning using Tensorflow, Keras and PyTorch, Cloud Solutions using AWS and Azure. I even have 2 MS Azure certifications!"}
             ],
             "skill_list": [
-                {"name": "PYTHON", "score": "85"},
-                {"name": "DJANGO", "score": "80"},
-                {"name": "CLOUD (AWS/Azure/GCP)", "score": "75"},
-                {"name": "JAVASCRIPT", "score": "75"},
-                {"name": "DOCKER", "score": "70"}
+                {"name": "PYTHON", "score": "8.5"},
+                {"name": "DJANGO", "score": "8.0"},
+                {"name": "CLOUD (AWS/Azure/GCP)", "score": "7.5"},
+                {"name": "JAVASCRIPT", "score": "7.5"},
+                {"name": "DOCKER", "score": "7.0"}
                 
             ]
         }
